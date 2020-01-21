@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TreeMapVisualiser.iml" filepath="$PROJECT_DIR$/.idea/TreeMapVisualiser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TreeMap.iml" filepath="$PROJECT_DIR$/.idea/TreeMap.iml" />
     </modules>
   </component>
 </project>
