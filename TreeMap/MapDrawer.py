@@ -80,3 +80,8 @@ class MapDrawer:
         self.DISPLAY.blit(name_surface, (530, 20))
         self.DISPLAY.blit(size_surface, (530, 40))
         self.DISPLAY.blit(category_surface, (530, 60))
+
+    def close_parent(self, x, y):
+        target = self.curr_tree.get_tree(x, y)
+        target.close_parent()
+        self.draw_rectangles()

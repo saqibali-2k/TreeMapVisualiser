@@ -23,6 +23,7 @@ class DataTree:
         # categorical data (i.e riding winner)
         self.category = category
         self.rect = (0, 0, 0, 0)
+        self.parent = None
 
     def _build_children_horizontally(self, start_x: float, start_y: float, width: float, height: float) -> None:
         curr_x, curr_y = start_x, start_y
@@ -92,6 +93,9 @@ class DataTree:
                 lst += child.get_categories()
             return lst
 
+    def close_parent(self) -> None:
+        if self.parent is not None:
+            self.parent.expanded = False
 
 
 def dict_to_tree(data: dict) -> Optional[DataTree]:
@@ -108,6 +112,7 @@ def dict_to_tree(data: dict) -> Optional[DataTree]:
         for sub_dict in data['subtrees']:
             child = dict_to_tree(data['subtrees'][sub_dict])
             root.children.append(child)
+            child.parent = root
             root.size += child.size
             if child.category not in categories:
                 categories[child.category] = 0

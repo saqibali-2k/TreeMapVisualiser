@@ -51,6 +51,10 @@ class View:
                     self.drawer.update_map()
                     self.drawer.draw_rectangles()
                     pos = None
+            elif keyboard.is_pressed('c'):
+                if pos is not None:
+                    self.drawer.close_parent(pos[0], pos[1])
+                pos = None
             elif keyboard.is_pressed('z'):
                 running = False
 
